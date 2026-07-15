@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой проект: новости, финансы, безопасность</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            color: #666;
+        }
+
+        /* Стили для группы кнопок */
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 40px;
+        }
+
+        /* Стиль кнопки */
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            text-align: center;
+            min-width: 130px;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Блок формы отзывов */
+        .feedback-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .feedback-form h2 {
+            margin-top: 0;
+            color: #333;
+            text-align: center;
+        }
+        .feedback-form label {
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+            color: #555;
+        }
+        .feedback-form input,
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        .feedback-form button {
+            margin-top: 24px;
+            width: 100%;
+            padding: 14px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .feedback-form button:hover {
+            background: #218838;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #888;
+            text-align: center;
+        }
+
+        /* Адаптивность для очень маленьких экранов */
+        @media (max-width: 400px) {
+            .btn {
+                min-width: 100%;
+            }
+            .btn-group {
+                gap: 10px;
+            }
+            .feedback-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Мой проект</h1>
+    <p>Выбери, что интересно прямо сейчас:</p>
+
+    <!-- КНОПКИ-РАЗДЕЛЫ -->
+    <div class="btn-group">
+        <a href="news.html" class="btn">Что происходит в мире</a>
+        <a href="currency.html" class="btn">Курсы валют</a>
+        <a href="business-help.html" class="btn">Помощь малому бизнесу</a>
+        <a href="market.html" class="btn">Рынок и акции</a>
+        <a href="dev-security.html" class="btn">Программирование и защита</a>
+    </div>
+
+    <!-- ФОРМА ОТЗЫВОВ -->
+    <!-- ВАЖНО: ниже в action="" нужно вставить свою ссылку от Formspree -->
+    <form action="https://formspree.io/f/ВСТАВЬ_СЮДА_СВОЙ_КОД" method="POST">
+        <div class="feedback-form">
+            <h2>Оставьте отзыв</h2>
+            
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Как к вам обращаться">
+
+            <label for="email">Ваш Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+
+            <label for="message">Ваш отзыв или вопрос:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Напишите, что понравилось или что улучшить…"></textarea>
+
+            <button type="submit">Отправить отзыв</button>
+            
+            <p class="note">
+                Это рабочая форма: отзыв придёт вам на почту.<br>
+                Чтобы это работало, замените «ВСТАВЬ_СЮДА_СВОЙ_КОД» на код от Formspree.
+            </p>
+        </div>
+    </form>
+</body>
+</html>
+
